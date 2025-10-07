@@ -1,0 +1,362 @@
+{
+  "datasets": {
+    "bigdata": {
+      "name": "bigdata",
+      "type": "data_step",
+      "input_datasets": [],
+      "output_datasets": [],
+      "variables": [
+        "obs",
+        "group",
+        "value"
+      ],
+      "operations": [
+        "Call: streaminit",
+        "Loop: i from 1 to 25000000",
+        "Assign: obs = rand('integer', 1, 1000000000)",
+        "Assign: group = rand('integer', 1, 5)",
+        "Assign: value = rand('uniform')",
+        "Explicit output"
+      ],
+      "line_start": 39,
+      "line_end": 50
+    },
+    "smalldata": {
+      "name": "smalldata",
+      "type": "data_step",
+      "input_datasets": [
+        "bigdata"
+      ],
+      "output_datasets": [],
+      "variables": [
+        "status",
+        "n"
+      ],
+      "operations": [
+        "Call: streaminit",
+        "Assign: status = 'Found it!'",
+        "Loop: i from 1 to 10",
+        "Assign: n = rand('uniform', 1, nobs)",
+        "Read from: bigdata",
+        "Explicit output"
+      ],
+      "line_start": 53,
+      "line_end": 69
+    },
+    "hash": {
+      "name": "hash",
+      "type": "data_step",
+      "input_datasets": [
+        "bigdata"
+      ],
+      "output_datasets": [],
+      "variables": [],
+      "operations": [
+        "Read from: bigdata",
+        "Call: missing"
+      ],
+      "line_start": 114,
+      "line_end": 129
+    }
+  },
+  "procedures": {
+    "proc_sql_75": {
+      "name": "proc_sql_75",
+      "proc_type": "sql",
+      "options": {
+        "magic": 101
+      },
+      "input_datasets": [
+        "bigdata"
+      ],
+      "output_datasets": [
+        "magic_101"
+      ],
+      "sql_operations": [
+        "create table magic_101 as select t1.group, t1.obs, t1.value, t2.status from bigdata as t1 INNER JOIN smalldata as t2 ON t1.group=t2.group AND t1.obs=t2.obs;"
+      ],
+      "line_start": 76,
+      "line_end": 83
+    },
+    "proc_sql_89": {
+      "name": "proc_sql_89",
+      "proc_type": "sql",
+      "options": {
+        "magic": 102
+      },
+      "input_datasets": [
+        "bigdata"
+      ],
+      "output_datasets": [
+        "magic_102"
+      ],
+      "sql_operations": [
+        "create table magic_102 as select t1.group, t1.obs, t1.value, t2.status from bigdata as t1 INNER JOIN smalldata as t2 ON t1.group=t2.group AND t1.obs=t2.obs;"
+      ],
+      "line_start": 90,
+      "line_end": 97
+    },
+    "proc_sql_103": {
+      "name": "proc_sql_103",
+      "proc_type": "sql",
+      "options": {
+        "magic": 103
+      },
+      "input_datasets": [
+        "bigdata"
+      ],
+      "output_datasets": [
+        "magic_103"
+      ],
+      "sql_operations": [
+        "create table magic_103 as select t1.group, t1.obs, t1.value, t2.status from bigdata as t1 INNER JOIN smalldata as t2 ON t1.group=t2.group AND t1.obs=t2.obs;"
+      ],
+      "line_start": 104,
+      "line_end": 111
+    }
+  },
+  "variables": {
+    "magic": {
+      "name": "magic",
+      "type": "unknown",
+      "length": null,
+      "initialization": "101: Sequential loop",
+      "usage": [],
+      "line_numbers": [
+        23,
+        24,
+        25,
+        28,
+        76,
+        90,
+        104
+      ]
+    },
+    "i": {
+      "name": "i",
+      "type": "unknown",
+      "length": null,
+      "initialization": "1 to 25000000",
+      "usage": [],
+      "line_numbers": [
+        42,
+        60
+      ]
+    },
+    "obs": {
+      "name": "obs",
+      "type": "unknown",
+      "length": null,
+      "initialization": "rand('integer', 1, 1000000000)",
+      "usage": [],
+      "line_numbers": [
+        43
+      ]
+    },
+    "group": {
+      "name": "group",
+      "type": "unknown",
+      "length": null,
+      "initialization": "rand('integer', 1, 5)",
+      "usage": [],
+      "line_numbers": [
+        44,
+        82,
+        96,
+        110
+      ]
+    },
+    "value": {
+      "name": "value",
+      "type": "unknown",
+      "length": null,
+      "initialization": "rand('uniform')",
+      "usage": [],
+      "line_numbers": [
+        45
+      ]
+    },
+    "nobs": {
+      "name": "nobs",
+      "type": "unknown",
+      "length": null,
+      "initialization": "nobs",
+      "usage": [],
+      "line_numbers": [
+        56
+      ]
+    },
+    "status": {
+      "name": "status",
+      "type": "unknown",
+      "length": null,
+      "initialization": "'Found it!'",
+      "usage": [],
+      "line_numbers": [
+        58
+      ]
+    },
+    "n": {
+      "name": "n",
+      "type": "unknown",
+      "length": null,
+      "initialization": "rand('uniform', 1, nobs)",
+      "usage": [],
+      "line_numbers": [
+        61
+      ]
+    },
+    "point": {
+      "name": "point",
+      "type": "unknown",
+      "length": null,
+      "initialization": "n",
+      "usage": [],
+      "line_numbers": [
+        62
+      ]
+    },
+    "MAGIC": {
+      "name": "MAGIC",
+      "type": "unknown",
+      "length": null,
+      "initialization": "101: Sequential Loop Join ********/",
+      "usage": [],
+      "line_numbers": [
+        72,
+        86,
+        100
+      ]
+    },
+    "_N_": {
+      "name": "_N_",
+      "type": "unknown",
+      "length": null,
+      "initialization": "1) then do",
+      "usage": [],
+      "line_numbers": [
+        117
+      ]
+    }
+  },
+  "functions": [
+    {
+      "name": "streaminit",
+      "parameters": [
+        "42"
+      ],
+      "context": "call streaminit(42);",
+      "line_number": 40
+    },
+    {
+      "name": "rand",
+      "parameters": [
+        "'integer'",
+        "1",
+        "1000000000"
+      ],
+      "context": "obs   = rand('integer', 1, 1000000000);",
+      "line_number": 43
+    },
+    {
+      "name": "rand",
+      "parameters": [
+        "'integer'",
+        "1",
+        "5"
+      ],
+      "context": "group = rand('integer', 1, 5);",
+      "line_number": 44
+    },
+    {
+      "name": "rand",
+      "parameters": [
+        "'uniform'"
+      ],
+      "context": "value = rand('uniform');",
+      "line_number": 45
+    },
+    {
+      "name": "streaminit",
+      "parameters": [
+        "42"
+      ],
+      "context": "call streaminit(42);",
+      "line_number": 54
+    },
+    {
+      "name": "rand",
+      "parameters": [
+        "'uniform'",
+        "1",
+        "nobs"
+      ],
+      "context": "n=rand('uniform', 1, nobs);",
+      "line_number": 61
+    },
+    {
+      "name": "lookup",
+      "parameters": [
+        "dataset: 'smalldata'"
+      ],
+      "context": "dcl hash lookup(dataset: 'smalldata');",
+      "line_number": 120
+    },
+    {
+      "name": "defineKey",
+      "parameters": [
+        "'group'",
+        "'obs'"
+      ],
+      "context": "lookup.defineKey('group', 'obs');",
+      "line_number": 121
+    },
+    {
+      "name": "defineData",
+      "parameters": [
+        "'status'"
+      ],
+      "context": "lookup.defineData('status');",
+      "line_number": 122
+    },
+    {
+      "name": "defineDone",
+      "parameters": [],
+      "context": "lookup.defineDone();",
+      "line_number": 123
+    },
+    {
+      "name": "missing",
+      "parameters": [
+        "status",
+        "obs"
+      ],
+      "context": "call missing(status, obs);",
+      "line_number": 125
+    },
+    {
+      "name": "Find",
+      "parameters": [],
+      "context": "if(lookup.Find() = 0);",
+      "line_number": 128
+    }
+  ],
+  "hash_objects": {
+    "lookup": {
+      "name": "lookup",
+      "dataset": "smalldata",
+      "keys": [
+        "group",
+        "obs"
+      ],
+      "data_fields": [
+        "status"
+      ],
+      "operations": [
+        "Hash table initialized",
+        "Lookup operation at line 128"
+      ],
+      "line_start": 120
+    }
+  }
+}
