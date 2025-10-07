@@ -1,0 +1,171 @@
+{
+  "classes": [
+    {
+      "name": "SQLiteDatabase",
+      "line": 31,
+      "methods": [
+        {
+          "name": "__init__",
+          "parameters": "(self, db_path)",
+          "line": 34
+        },
+        {
+          "name": "connect",
+          "parameters": "(self)",
+          "line": 40
+        },
+        {
+          "name": "close",
+          "parameters": "(self)",
+          "line": 46
+        },
+        {
+          "name": "create_bigdata_table",
+          "parameters": "(self)",
+          "line": 52
+        },
+        {
+          "name": "generate_bigdata",
+          "parameters": "(self)",
+          "line": 65
+        },
+        {
+          "name": "create_smalldata_table",
+          "parameters": "(self)",
+          "line": 96
+        },
+        {
+          "name": "magic_101_nested_loop_join",
+          "parameters": "(self)",
+          "line": 137
+        },
+        {
+          "name": "magic_102_sort_merge_join",
+          "parameters": "(self)",
+          "line": 161
+        },
+        {
+          "name": "magic_103_hash_join",
+          "parameters": "(self)",
+          "line": 193
+        },
+        {
+          "name": "hash_result",
+          "parameters": "(self)",
+          "line": 247
+        },
+        {
+          "name": "verify_results",
+          "parameters": "(self)",
+          "line": 289
+        }
+      ]
+    }
+  ],
+  "methods": [
+    {
+      "class": "SQLiteDatabase",
+      "name": "__init__",
+      "parameters": "(self, db_path)",
+      "line": 34
+    },
+    {
+      "class": "SQLiteDatabase",
+      "name": "connect",
+      "parameters": "(self)",
+      "line": 40
+    },
+    {
+      "class": "SQLiteDatabase",
+      "name": "close",
+      "parameters": "(self)",
+      "line": 46
+    },
+    {
+      "class": "SQLiteDatabase",
+      "name": "create_bigdata_table",
+      "parameters": "(self)",
+      "line": 52
+    },
+    {
+      "class": "SQLiteDatabase",
+      "name": "generate_bigdata",
+      "parameters": "(self)",
+      "line": 65
+    },
+    {
+      "class": "SQLiteDatabase",
+      "name": "create_smalldata_table",
+      "parameters": "(self)",
+      "line": 96
+    },
+    {
+      "class": "SQLiteDatabase",
+      "name": "magic_101_nested_loop_join",
+      "parameters": "(self)",
+      "line": 137
+    },
+    {
+      "class": "SQLiteDatabase",
+      "name": "magic_102_sort_merge_join",
+      "parameters": "(self)",
+      "line": 161
+    },
+    {
+      "class": "SQLiteDatabase",
+      "name": "magic_103_hash_join",
+      "parameters": "(self)",
+      "line": 193
+    },
+    {
+      "class": "SQLiteDatabase",
+      "name": "hash_result",
+      "parameters": "(self)",
+      "line": 247
+    },
+    {
+      "class": "SQLiteDatabase",
+      "name": "verify_results",
+      "parameters": "(self)",
+      "line": 289
+    }
+  ],
+  "functions": [
+    {
+      "name": "main",
+      "parameters": "()",
+      "line": 335
+    }
+  ],
+  "imports": [
+    {
+      "text": "import sqlite3",
+      "line": 8
+    },
+    {
+      "text": "import sys",
+      "line": 9
+    },
+    {
+      "text": "import time",
+      "line": 10
+    },
+    {
+      "text": "from pathlib import Path",
+      "line": 11
+    },
+    {
+      "text": "import numpy as np",
+      "line": 12
+    },
+    {
+      "text": "from sql_magic_config import (\n        RANDOM_SEED, BIGDATA_ROWS, SMALLDATA_ROWS, BATCH_SIZE,\n        DB_NAME, GROUP_MIN, GROUP_MAX, OBS_MIN, OBS_MAX\n    )",
+      "line": 15
+    },
+    {
+      "text": "import traceback",
+      "line": 375
+    }
+  ],
+  "constants": []
+}
